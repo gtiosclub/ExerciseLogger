@@ -1,2 +1,2 @@
 # ExerciseLogger
-Log your sets and save them w/ UserDefaults and SwiftUI
+Learn how to save data between sessions. Log your sets, reps, and weight so you can track your progress over time. SwiftUI + UserDefaults.
