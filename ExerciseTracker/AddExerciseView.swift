@@ -11,7 +11,6 @@ struct AddExerciseView: View {
     @State var exerciseName: String = ""
     @State var exerciseReps: String = ""
     @State var exerciseWeight: String = ""
-    @State var exerciseDate: Date = Date()
     @State var showAlert = false
     @ObservedObject var myExercises: MyExercises
     
@@ -24,11 +23,9 @@ struct AddExerciseView: View {
             
             TextField("Weight", text: $exerciseWeight)
                 .keyboardType(.decimalPad)
-            
-            DatePicker("Date", selection: $exerciseDate, displayedComponents: .date)
-            
+
             Button(action: {
-                myExercises.addExercise(exercise: Exercise(name: exerciseName, reps: exerciseReps == "" ? 0 : Int(exerciseReps)!, weight: exerciseWeight == "" ? 0 : Int(exerciseWeight)!, date: exerciseDate))
+                myExercises.addExercise(exercise: Exercise(name: exerciseName, reps: exerciseReps == "" ? 0 : Int(exerciseReps)!, weight: exerciseWeight == "" ? 0 : Int(exerciseWeight)!))
                 self.showAlert = true
             }, label: {
                 Text("Add Set")

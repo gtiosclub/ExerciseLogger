@@ -16,20 +16,12 @@ struct ExercisesListView: View {
             Text("Reps: \(exercise.reps)")
             
             Text("Weight: \(exercise.weight)")
-            
-            Text("Date: \(convertDateToString())")
         }
-    }
-    
-    func convertDateToString() -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MM/dd/YY"
-        return dateFormatter.string(from: exercise.date)
     }
 }
 
 struct ExercisesListView_Previews: PreviewProvider {
     static var previews: some View {
-        ExercisesListView(exercise: Exercise(name: "Pushups", reps: 10, weight: 0, date: Date()))
+        ExercisesListView(exercise: Exercise(name: "Pushups", reps: 10, weight: 0))
     }
 }

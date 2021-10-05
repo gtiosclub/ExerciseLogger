@@ -7,9 +7,8 @@
 
 import Foundation
 
-
 enum ExerciseCodingKeys: CodingKey {
-    case id, name, reps, weight, date
+    case id, name, reps, weight
 }
 
 struct Exercise: Identifiable, Codable {
@@ -17,13 +16,11 @@ struct Exercise: Identifiable, Codable {
     var name: String
     var reps: Int
     var weight: Int
-    var date: Date
     
-    init(name: String, reps: Int, weight: Int, date: Date) {
+    init(name: String, reps: Int, weight: Int) {
         self.name = name
         self.reps = reps
         self.weight = weight
-        self.date = date
     }
     
     init(from decoder: Decoder) throws {
@@ -33,7 +30,6 @@ struct Exercise: Identifiable, Codable {
         self.name = try container.decode(String.self, forKey: .name)
         self.reps = try container.decode(Int.self, forKey: .reps)
         self.weight = try container.decode(Int.self, forKey: .weight)
-        self.date = try container.decode(Date.self, forKey: .date)
     }
     
     func encode(to encoder: Encoder) throws {
@@ -43,7 +39,6 @@ struct Exercise: Identifiable, Codable {
         try container.encode(name, forKey: .name)
         try container.encode(reps, forKey: .reps)
         try container.encode(weight, forKey: .weight)
-        try container.encode(date, forKey: .date)
     }
 }
 
