@@ -9,11 +9,9 @@ import SwiftUI
 
 @main
 struct ExerciseTrackerApp: App {
-    @StateObject var myExercises = MyExercises()
-    
     var body: some Scene {
         WindowGroup {
-            ExercisesView(myExercises: myExercises)
+            ExercisesView()
         }
     }
 }

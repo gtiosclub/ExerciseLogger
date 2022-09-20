@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ExercisesView: View {
-    @ObservedObject var myExercises: MyExercises
+    @ObservedObject var myExercises = MyExercises()
     @State var goToAddExerciseView = false
     var body: some View {
         NavigationView {
@@ -43,6 +43,6 @@ struct ExercisesView: View {
 
 struct ExercisesView_Previews: PreviewProvider {
     static var previews: some View {
-        ExercisesView(myExercises: MyExercises())
+        ExercisesView()
     }
 }
